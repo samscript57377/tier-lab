@@ -1,32 +1,65 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TierLab</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TierLab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
     <div class="container">
-        <h1>Welcome to TierLab - Calculate your tierlist</h1>
-        <input type="text" id="userInput" placeholder="Enter a username here...">
-        <button id="addUserButton">Add User</button>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Kills</th>
-                    <th>Deaths</th>
-                    <th>Assists</th>
-                </tr>
-            </thead>
-            <tbody id="userList">
-            </tbody>
-        </table>
-        <button id="calculateButton">Calculate Tierlist</button>
-        <h1>Tierlist</h1>
-        <div id="tierlistContainer">None yet</div>
+        <h1>Welcome to TierLab</h1>
+        <div class="cards">
+            <div class="card card-accent">
+                <div class="card-header">
+                    <div>
+                        <p class="card-title">Create</p>
+                        <p class="card-subtitle">All for free!</p>
+                    </div>
+                    <span class="card-badge">Coming soon</span>
+                </div>
+                <div class="card-body">
+                    Create tierlists for your favorite games and share them with your friends!
+                </div>
+                <div class="card-footer">
+                    <button>Start Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <p class="card-title">Calculate</p>
+                        <p class="card-subtitle">See how you rank!</p>
+                    </div>
+                    <span class="card-badge">Try now!</span>
+                </div>
+                <div class="card-body">
+                    Calculate your tierlist based on your friends' stats and see how you rank!
+                </div>
+                <div class="card-footer">
+                    <button id="calculateButton">Calculate Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <p class="card-title">View</p>
+                        <p class="card-subtitle">See what others think!</p>
+                    </div>
+                    <span class="card-badge">Coming soon</span>
+                </div>
+                <div class="card-body">
+                    View the tierlists created by other users and see how they rank!
+                </div>
+                <div class="card-footer">
+                    <button id="viewButton">View Now</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
-    </body>
+</body>
+
 </html>

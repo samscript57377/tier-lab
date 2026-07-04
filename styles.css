@@ -332,7 +332,7 @@ td.changable::after {
   position: absolute;
   right: 6px;
   top: 50%;
-  transform: translateY(-50%) translateX(-100%) scale(3);
+  transform: translateY(-50%);
   font-size: 0.7rem;
   color: var(--indigo);
   opacity: 0;
@@ -357,6 +357,92 @@ td.changable:active {
   width: 100%;
   overflow-x: auto;
   border-radius: var(--radius);
+}
+
+/* --------------------------------------------------------------------- */
+/* Card                                                                    */
+/* --------------------------------------------------------------------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-card);
+  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease), border-color 200ms var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-strong);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.card-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin: 2px 0 0;
+}
+
+.card-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--gradient-soft);
+  color: var(--indigo-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-body {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.card-footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Accent variant — left gradient bar, like .tier-section */
+.card.card-accent {
+  border-left: 4px solid var(--indigo);
+}
+
+/* Flat/grid layout of cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
 
 /* --------------------------------------------------------------------- */
