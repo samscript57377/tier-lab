@@ -1,0 +1,324 @@
+/* ===========================================================
+   TierLab — general stylesheet, ChatGPT-inspired look
+   =========================================================== */
+
+:root {
+  --bg: #212121;
+  --bg-elevated: #2f2f2f;
+  --bg-elevated-2: #3a3a3a;
+  --border: #4d4d4f;
+  --border-soft: #3d3d3f;
+  --text: #ececec;
+  --text-muted: #b4b4b4;
+  --text-faint: #8e8ea0;
+  --accent: #10a37f;
+  --accent-hover: #0d8c6d;
+  --danger: #ef4444;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --font-sans: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+  --font-mono: "Söhne Mono", "SFMono-Regular", Consolas, "Liberation Mono",
+    Menlo, monospace;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --transition: 150ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------
+   Generic divs / containers
+   --------------------------------- */
+
+div {
+  border-color: var(--border-soft);
+}
+
+.container {
+  max-width: 880px;
+  margin: 48px auto;
+  padding: 32px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+}
+
+#tierlistContainer {
+  margin-top: 12px;
+  padding: 20px;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--text-faint);
+  min-height: 60px;
+}
+
+.tier-section {
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.tier-section:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------------------------------
+   Inputs & buttons
+   --------------------------------- */
+
+input[type="text"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+  width: 100%;
+  max-width: 320px;
+  padding: 10px 14px;
+  margin: 4px 8px 16px 0;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: var(--text-faint);
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+textarea:hover,
+select:hover {
+  border-color: #6b6b6d;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(16, 163, 127, 0.25);
+}
+
+button {
+  padding: 10px 18px;
+  margin: 4px 8px 16px 0;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  background: var(--bg-elevated-2);
+  color: var(--text-faint);
+  cursor: not-allowed;
+}
+
+/* ---------------------------------
+   Tables
+   --------------------------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  padding: 8px 4px;
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+
+thead {
+  background: var(--bg-elevated-2);
+}
+
+th {
+  text-align: left;
+  padding: 10px 14px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border-soft);
+  transition: background var(--transition);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr:hover {
+  background: rgba(16, 163, 127, 0.08);
+}
+
+td {
+  padding: 10px 14px;
+  color: var(--text);
+  vertical-align: middle;
+}
+
+tfoot td {
+  color: var(--text-muted);
+  font-weight: 600;
+  border-top: 1px solid var(--border);
+}
+
+/* Editable / interactive cells */
+td.changable {
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+td.changable:hover {
+  background: rgba(16, 163, 127, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(16, 163, 127, 0.4);
+}
+
+td.changable:active {
+  background: rgba(16, 163, 127, 0.28);
+}
+
+/* Scrollable table wrapper, if used */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius);
+}
+
+/* ---------------------------------
+   Responsive
+   --------------------------------- */
+
+@media (max-width: 600px) {
+  .container {
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;
+  }
+
+  input[type="text"] {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  th,
+  td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ---------------------------------
+   Reduced motion
+   --------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

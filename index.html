@@ -1,0 +1,32 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TierLab</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <div class="container">
+        <h1>Welcome to TierLab - Calculate your tierlist</h1>
+        <input type="text" id="userInput" placeholder="Enter a username here...">
+        <button id="addUserButton">Add User</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Kills</th>
+                    <th>Deaths</th>
+                    <th>Assists</th>
+                </tr>
+            </thead>
+            <tbody id="userList">
+            </tbody>
+        </table>
+        <button id="calculateButton">Calculate Tierlist</button>
+        <h1>Tierlist</h1>
+        <div id="tierlistContainer">None yet</div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>
